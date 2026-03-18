@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Most Hated Characters — AniOracle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Noto+Serif+Display:ital,wght@0,900;1,900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bg:#000007; --bg2:#05030f; --bg3:#0a0720; --bg4:#0f0b28;
+    --glass:rgba(10,7,32,.82); --glass2:rgba(255,255,255,.04);
+    --line:rgba(255,255,255,.07); --line2:rgba(255,255,255,.13);
+    --snow:#f5f2ff; --snow2:rgba(245,242,255,.72); --snow3:rgba(245,242,255,.44);
+    --snow4:rgba(245,242,255,.25); --snow5:rgba(245,242,255,.12);
+    --pu:#8B5CF6; --pu2:#A78BFA; --pu3:#C4B5FD;
+    --pk:#EC4899; --pk2:#F472B6; --pk3:#FBCFE8;
+    --gr:#10B981; --cy:#06B6D4; --rd:#EF4444;
+    --grad-main:linear-gradient(135deg,#8B5CF6,#EC4899);
+    --ff:'Sora',system-ui,sans-serif;
+    --mono:'JetBrains Mono',monospace;
+    --fs:'Noto Serif Display',Georgia,serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:auto;-webkit-tap-highlight-color:transparent}
+  body{font-family:var(--ff);background:var(--bg);color:var(--snow);min-height:100dvh;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:20px}
+  a{color:inherit;text-decoration:none}
+  button{cursor:pointer;font-family:var(--ff);border:none;background:none}
+  img{display:block}
+
+  @keyframes live-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.65)}}
+  @keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  .section-anim{animation:fade-up .4s ease both}
+  /* Top 21-30 divider */
+  .divider-label{
+    display:flex;align-items:center;gap:10px;
+    margin:28px 16px 8px;
+  }
+  .divider-label span{
+    font-size:.52rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+    padding:4px 12px;border-radius:20px;white-space:nowrap;
+  }
+  .divider-line{flex:1;height:1px;background:rgba(255,255,255,.07)}
+</style>
+</head>
+<body>
+  <!-- CINEMATIC HERO BANNER -->
+  <div style="position:relative;height:200px;overflow:hidden;background:linear-gradient(135deg,#200000,#0d0000);flex-shrink:0">
+    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=900&q=80&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.6) saturate(1.35)" onerror="this.style.opacity='0'">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,.1) 40%,rgba(0,0,0,.85) 100%)"></div>
+    <!-- Back button -->
+    <button onclick="window.history.back()" style="position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:20px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.68rem;font-weight:700;font-family:var(--ff);cursor:pointer;backdrop-filter:blur(10px);z-index:5">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back
+    </button>
+    <!-- Title overlay -->
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 20px 18px;z-index:5">
+      <div style="font-size:.5rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#ef4444;margin-bottom:5px">Controversial · Top 30</div>
+      <div style="font-size:1.9rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;text-shadow:0 3px 20px rgba(0,0,0,.8)">Most Hated</div>
+      <div style="font-size:.6rem;color:rgba(255,255,255,.55);margin-top:6px">The most disliked & despised characters in anime history</div>
+    </div>
+  </div>
+  <div style="border-radius:16px;overflow:hidden;margin:0 16px 80px;border:1px solid rgba(255,255,255,.07);background:rgba(5,3,15,.6)">
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:#FFD700;min-width:24px;text-align:center;font-family:var(--mono)">1</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,215,0,.4)"><img src="./hated-sakura.png" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sakura Haruno</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Naruto</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Annoying Kunoichi</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:#C0C0C0;min-width:24px;text-align:center;font-family:var(--mono)">2</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><img src="./hated-tucker.png" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Shou Tucker</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">FMA Brotherhood</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Chimera Alchemist</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:#CD7F32;min-width:24px;text-align:center;font-family:var(--mono)">3</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><img src="./hated-seryu.png" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Seryu Ubiquitous</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Akame ga Kill</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Justice Obsessed</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">4</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><img src="./hated-danzo.png" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Danzo Shimura</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Naruto</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">War Hawk</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">5</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><img src="./hated-griffith.png" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Griffith</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Berserk</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Eclipse Betrayer</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">6</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><img src="./hated-mahito.png" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Mahito</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Jujutsu Kaisen</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Soul Manipulator</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">7</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><img src="./hated-gabi.png" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Gabi Braun</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Attack on Titan</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Warrior Candidate</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">8</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sosuke Aizen</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Bleach</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Manipulative Villain</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">9</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Shinji Matou</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Fate/Stay Night</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Abuser</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">10</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Minoru Mineta</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">My Hero Academia</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Perverted Hero</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">11</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Dio Brando</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">JoJo's Bizarre Adventure</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Za Warudo</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">12</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">King Bradley</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">FMA Brotherhood</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Fuhrer</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">13</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Muscular</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">My Hero Academia</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Villainous Brute</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">14</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Rachel</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Tower of God</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Ultimate Betrayer</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">15</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Makoto Itou</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">School Days</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Unfaithful Lead</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">16</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sugou Nobuyuki</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Sword Art Online</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Villain Admin</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">17</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Younger Toguro</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Yu Yu Hakusho</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Power Obsessed</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">18</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Obito Uchiha</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Naruto Shippuden</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Moon Eye Plan</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">19</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Nobuyuki Sugou</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Sword Art Online</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Oberon</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">20</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Tsugumi</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Guilty Crown</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Antagonist</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP 21–30 -->
+  <div style="margin:28px 16px 8px;display:flex;align-items:center;gap:10px">
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.07)"></div>
+    <div style="font-size:.52rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#f87171;padding:4px 12px;border-radius:20px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2)">Top 21 – 30</div>
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.07)"></div>
+  </div>
+  <div style="border-radius:16px;overflow:hidden;margin:8px 16px 80px;border:1px solid rgba(255,255,255,.07);background:rgba(5,3,15,.6)">
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">21</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Squealer</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Shin Sekai Yori</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Rebellious Queerat</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">22</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Kyubey</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Puella Magi Madoka</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Incubator</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">23</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Seiji Noumi</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Accel World</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Chrome Disaster</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">24</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Ragyo Kiryuin</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Kill la Kill</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Twisted Mother</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">25</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Shou Tucker (Nina)</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">FMA Brotherhood</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Unforgivable</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">26</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Malty Melromarc</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Shield Hero</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Bitch Princess</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">27</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Akito Sohma</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Fruits Basket</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Vengeful God</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">28</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Reiner Braun</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Attack on Titan</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Armored Titan</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">29</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Shinji Ikari</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">Neon Genesis Evangelion</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Indecisive Pilot</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="font-size:.9rem;font-weight:900;color:rgba(255,255,255,.5);min-width:24px;text-align:center;font-family:var(--mono)">30</div>
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(255,255,255,.1)"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a2e,#0a1a2e)"></div></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.78rem;font-weight:800;color:var(--snow)">Barry the Chopper</div>
+        <div style="font-size:.54rem;color:#f87171;margin-top:2px">FMA Brotherhood</div>
+        <div style="font-size:.5rem;color:var(--snow4);margin-top:1px">Serial Killer</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
