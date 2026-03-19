@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — AniOracle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Noto+Serif+Display:ital,wght@0,900;1,900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#000007;--bg2:#05030f;--bg3:#0a0720;--bg4:#0f0b28;
+  --glass:rgba(10,7,32,.82);--glass2:rgba(255,255,255,.04);
+  --line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.13);
+  --snow:#f5f2ff;--snow2:rgba(245,242,255,.72);--snow3:rgba(245,242,255,.44);
+  --snow4:rgba(245,242,255,.25);--snow5:rgba(245,242,255,.12);
+  --pu:#8B5CF6;--pu2:#A78BFA;--pu3:#C4B5FD;
+  --pk:#EC4899;--pk2:#F472B6;--pk3:#FBCFE8;
+  --gr:#10B981;--cy:#06B6D4;--rd:#EF4444;
+  --grad-main:linear-gradient(135deg,#8B5CF6,#EC4899);
+  --ff:'Sora',system-ui,sans-serif;
+  --fs:'Noto Serif Display',Georgia,serif;
+  --mono:'JetBrains Mono',monospace;
+  --ease-out-expo:cubic-bezier(0.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--snow);min-height:100dvh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:rgba(139,92,246,.35);border-radius:4px}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:var(--ff);border:none;background:none}
+</style>
+</head>
+<body>
+<div style="background:linear-gradient(180deg,rgba(236,72,153,.12),transparent);padding:16px 20px 20px">
+    <button onclick="history.back()" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:22px;background:rgba(10,7,32,.7);border:1px solid rgba(236,72,153,.25);color:var(--snow2);font-size:.7rem;font-weight:700;font-family:var(--ff);cursor:pointer;margin-bottom:24px">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back
+    </button>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+      <div style="width:42px;height:42px;border-radius:12px;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div>
+        <div style="font-size:.52rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--pk2);margin-bottom:2px">Get in Touch</div>
+        <div style="font-size:1.6rem;font-weight:900;color:var(--snow);letter-spacing:-.03em">Contact Us</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 20px 80px;max-width:640px;margin:0 auto">
+
+    <!-- Info cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px">
+      <div style="background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.18);border-radius:14px;padding:14px">
+        <div style="width:32px;height:32px;border-radius:9px;background:rgba(139,92,246,.15);display:flex;align-items:center;justify-content:center;margin-bottom:10px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        </div>
+        <div style="font-size:.64rem;font-weight:800;color:var(--snow);margin-bottom:3px">Response Time</div>
+        <div style="font-size:.58rem;color:var(--snow3);line-height:1.5">We typically respond within 24-48 hours on business days.</div>
+      </div>
+      <div style="background:rgba(236,72,153,.07);border:1px solid rgba(236,72,153,.18);border-radius:14px;padding:14px">
+        <div style="width:32px;height:32px;border-radius:9px;background:rgba(236,72,153,.15);display:flex;align-items:center;justify-content:center;margin-bottom:10px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div style="font-size:.64rem;font-weight:800;color:var(--snow);margin-bottom:3px">Privacy First</div>
+        <div style="font-size:.58rem;color:var(--snow3);line-height:1.5">Your messages are private and never shared with third parties.</div>
+      </div>
+    </div>
+
+    <!-- Reasons to contact -->
+    <div style="margin-bottom:22px">
+      <div style="font-size:.58rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--snow3);margin-bottom:10px">What can we help with?</div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div style="display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="#a78bfa"><circle cx="12" cy="12" r="6"/></svg>
+          <span style="font-size:.66rem;color:var(--snow2)">Bug reports or technical issues</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="#f472b6"><circle cx="12" cy="12" r="6"/></svg>
+          <span style="font-size:.66rem;color:var(--snow2)">Copyright or content concerns</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="#6ee7b7"><circle cx="12" cy="12" r="6"/></svg>
+          <span style="font-size:.66rem;color:var(--snow2)">Feature requests and suggestions</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="#fbbf24"><circle cx="12" cy="12" r="6"/></svg>
+          <span style="font-size:.66rem;color:var(--snow2)">Business inquiries or partnerships</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="#a78bfa"><circle cx="12" cy="12" r="6"/></svg>
+          <span style="font-size:.66rem;color:var(--snow2)">General questions about AniOracle</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact button -->
+    <div style="background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:18px;text-align:center">
+      <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--pu),var(--pk));display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 16px rgba(139,92,246,.35)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div style="font-size:.8rem;font-weight:900;color:var(--snow);margin-bottom:4px">Send us an Email</div>
+      <div style="font-size:.62rem;color:var(--snow3);margin-bottom:14px">Reach out directly for any enquiries</div>
+      <a href="/cdn-cgi/l/email-protection#32515d5c4653514672405b505d5c411c415b4657" style="display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border-radius:14px;background:linear-gradient(135deg,var(--pu),var(--pk));color:#fff;font-size:.74rem;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(139,92,246,.35)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="__cf_email__" data-cfemail="aecdc1c0dacfcddaeedcc7ccc1c0dd80ddc7dacb">[email&#160;protected]</span>
+      </a>
+    </div>
+
+    <!-- Social / built by -->
+    <div style="margin-top:20px;padding:14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px">
+      <img src="./anioracle-logo.png" alt="" style="width:36px;height:36px;border-radius:10px;object-fit:contain;flex-shrink:0">
+      <div>
+        <div style="font-size:.68rem;font-weight:800;color:var(--snow)">Built by Ribon Patil</div>
+        <div style="font-size:.58rem;color:var(--snow3);margin-top:2px">Ribons &mdash; Crafting digital experiences from scratch</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
