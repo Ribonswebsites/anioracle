@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wallpapers — AniOracle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Noto+Serif+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000007;--bg2:#05030f;--bg3:#0a0720;--bg4:#0f0b28;--line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.13);--snow:#f5f2ff;--snow2:rgba(245,242,255,.72);--snow3:rgba(245,242,255,.44);--snow4:rgba(245,242,255,.22);--pu:#8B5CF6;--pu2:#A78BFA;--pu3:#C4B5FD;--pk:#EC4899;--pk2:#F472B6;--ff:'Sora',system-ui,sans-serif;--fs:'Noto Serif Display',Georgia,serif;--ease:cubic-bezier(0.16,1,.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
+body{font-family:var(--ff);background:var(--bg);color:var(--snow);min-height:100dvh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:0;height:0}
+img{display:block}
+button{cursor:pointer;font-family:var(--ff);border:none;background:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:200;height:58px;background:rgba(0,0,7,.9);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--line2);display:flex;align-items:center;gap:12px;padding:0 16px}
+.hdr-back{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:background .15s}
+.hdr-back:active{background:rgba(255,255,255,.14)}
+.hdr-center{flex:1;display:flex;align-items:center;gap:8px}
+.hdr-logo-img{width:28px;height:28px;object-fit:contain}
+.hdr-title{font-size:.8rem;font-weight:900;letter-spacing:-.02em}
+.hdr-title span{background:linear-gradient(135deg,#8B5CF6,#EC4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hdr-pill{padding:4px 12px;border-radius:20px;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);font-size:.48rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--pu3);flex-shrink:0}
+
+/* HERO */
+.hero{position:relative;height:240px;overflow:hidden}
+.hslide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.hslide.on{opacity:1}
+.hslide img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.48) saturate(1.3)}
+.hov{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,7,.45) 0%,transparent 28%,transparent 52%,rgba(0,0,7,.96) 100%)}
+.hglow{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(139,92,246,.14) 0%,transparent 70%)}
+.hcontent{position:absolute;bottom:0;left:0;right:0;z-index:5;padding:0 20px 22px;text-align:center}
+.hpill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;background:rgba(0,0,0,.62);border:1px solid rgba(139,92,246,.4);backdrop-filter:blur(8px);font-size:.46rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--pu3);margin-bottom:10px}
+.hdot-anim{width:5px;height:5px;border-radius:50%;background:var(--pu);animation:lp 1.5s ease-in-out infinite}
+@keyframes lp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.hh1{font-size:2.2rem;font-weight:900;letter-spacing:-.04em;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.8);margin-bottom:5px}
+.hh1 em{font-family:var(--fs);font-style:italic;background:linear-gradient(135deg,#C4B5FD,#EC4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hsub{font-size:.62rem;color:var(--snow3)}
+.hdots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:5px}
+.hdot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.3);transition:all .3s}
+.hdot.on{background:#fff;width:14px;border-radius:5px}
+
+/* SEARCH */
+.srch{padding:14px 16px 6px;position:relative}
+.srch-inp{width:100%;padding:11px 16px 11px 40px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid var(--line2);color:var(--snow);font-size:.76rem;font-family:var(--ff);outline:none;transition:border-color .2s}
+.srch-inp:focus{border-color:rgba(139,92,246,.5)}
+.srch-ico{position:absolute;left:28px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--snow4)}
+
+/* CATS */
+.cats{display:flex;gap:8px;overflow-x:auto;padding:0 16px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cats::-webkit-scrollbar{display:none}
+.cat{flex-shrink:0;padding:7px 16px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--snow3);font-size:.6rem;font-weight:700;font-family:var(--ff);cursor:pointer;transition:all .2s;white-space:nowrap}
+.cat.on{background:linear-gradient(135deg,rgba(139,92,246,.2),rgba(236,72,153,.12));border-color:rgba(139,92,246,.5);color:var(--pu3)}
+.cat:active{transform:scale(.94)}
+
+/* STATS */
+.sbar{display:flex;align-items:center;justify-content:space-between;padding:4px 16px 10px}
+.scnt{font-size:.58rem;color:var(--snow4);font-weight:600}
+.ssort{display:flex;align-items:center;gap:5px;font-size:.56rem;color:var(--pu2);font-weight:700;cursor:pointer}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px}
+
+/* CARD */
+.wcard{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;cursor:pointer;background:var(--bg3);box-shadow:0 4px 18px rgba(0,0,0,.6);transition:transform .2s var(--ease)}
+.wcard:active{transform:scale(.95)}
+.wcard img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.wcard-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,7,.9) 0%,rgba(0,0,7,.3) 40%,transparent 65%);opacity:0;transition:opacity .2s;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 10px 10px}
+.wcard:active .wcard-ov{opacity:1}
+.wcard-btn{display:flex;align-items:center;gap:5px;padding:6px 14px;border-radius:20px;background:linear-gradient(135deg,#8B5CF6,#EC4899);color:#fff;font-size:.52rem;font-weight:800;font-family:var(--ff);border:none;cursor:pointer;box-shadow:0 4px 12px rgba(139,92,246,.5)}
+.wcard-tag{position:absolute;top:7px;left:7px;padding:2px 8px;border-radius:6px;background:rgba(0,0,0,.68);backdrop-filter:blur(8px);font-size:.42rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,242,255,.7);border:1px solid rgba(255,255,255,.1)}
+.empty{grid-column:1/-1;text-align:center;padding:52px 20px;color:var(--snow4);font-size:.76rem}
+
+/* LOAD MORE */
+.lmw{padding:16px 16px 14px}
+.lmbtn{width:100%;padding:14px;border-radius:16px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.25);color:var(--pu3);font-size:.75rem;font-weight:800;font-family:var(--ff);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
+.lmbtn:active{background:rgba(139,92,246,.18)}
+
+/* FOOTER */
+.footer{padding:28px 20px calc(28px + env(safe-area-inset-bottom,0px));background:var(--bg2);border-top:1px solid var(--line);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:16px}
+.flogo{display:flex;align-items:center;gap:8px}
+.flogo img{width:38px;height:38px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(139,92,246,.5))}
+.fname{font-size:1.15rem;font-weight:900;letter-spacing:-.03em}
+.fname span{background:linear-gradient(135deg,#8B5CF6,#EC4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.fsub{font-size:.54rem;color:var(--snow4);letter-spacing:.06em;text-transform:uppercase}
+.fnav{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.fnav a{font-size:.62rem;font-weight:600;color:var(--snow3);cursor:pointer}
+.fnav a:active{color:var(--pu3)}
+.fcopy{font-size:.52rem;color:var(--snow4);line-height:1.7}
+.fcopy a{color:var(--pu2)}
+.frib{display:flex;align-items:center;gap:6px;opacity:.38}
+.frib span{font-size:.48rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+
+/* TOAST */
+.toast{position:fixed;bottom:calc(76px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%) translateY(16px);background:rgba(16,185,129,.96);color:#fff;padding:10px 20px;border-radius:20px;font-size:.66rem;font-weight:800;font-family:var(--ff);display:flex;align-items:center;gap:7px;box-shadow:0 8px 24px rgba(0,0,0,.5);opacity:0;transition:all .3s var(--ease);pointer-events:none;white-space:nowrap;z-index:999}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-back" onclick="history.back()">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--snow)" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+  </div>
+  <div class="hdr-center">
+    <img class="hdr-logo-img" src="./anioracle-logo.png" alt="">
+    <div class="hdr-title">Ani<span>Oracle</span></div>
+  </div>
+  <div class="hdr-pill">Free HD</div>
+</div>
+
+<div class="hero">
+  <div id="hslides"></div>
+  <div class="hov"></div><div class="hglow"></div>
+  <div class="hcontent">
+    <div class="hpill"><span class="hdot-anim"></span>Free · No Watermark · Instant Download</div>
+    <div class="hh1">Anime <em>Wallpapers</em></div>
+    <div class="hsub">Tap any image to download instantly to your device</div>
+  </div>
+  <div class="hdots" id="hdots"></div>
+</div>
+
+<div class="srch">
+  <svg class="srch-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  <input class="srch-inp" id="srchInp" type="text" placeholder="Search wallpapers…" oninput="doSearch(this.value)">
+</div>
+
+<div class="cats">
+  <button class="cat on" onclick="setFilter('all',this)">All</button>
+  <button class="cat" onclick="setFilter('battle',this)">Battle</button>
+  <button class="cat" onclick="setFilter('group',this)">Group Shot</button>
+  <button class="cat" onclick="setFilter('scene',this)">Scenes</button>
+  <button class="cat" onclick="setFilter('landscape',this)">Landscapes</button>
+  <button class="cat" onclick="setFilter('character',this)">Characters</button>
+  <button class="cat" onclick="setFilter('fight',this)">Fights</button>
+</div>
+
+<div class="sbar">
+  <div class="scnt" id="scnt">Loading…</div>
+  <div class="ssort" onclick="toggleSort()">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="10" y2="18"/></svg>
+    <span id="sortLbl">Newest</span>
+  </div>
+</div>
+
+<div class="grid" id="wgrid"></div>
+<div class="lmw" id="lmw" style="display:none">
+  <button class="lmbtn" onclick="loadMore()">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><polyline points="6,9 12,15 18,9"/></svg>
+    Load More
+    <span id="lmcnt" style="opacity:.55;font-weight:600;font-size:.68rem"></span>
+  </button>
+</div>
+
+<footer class="footer">
+  <div class="flogo">
+    <img src="./anioracle-logo.png" alt="">
+    <div class="fname">Ani<span>Oracle</span></div>
+  </div>
+  <div class="fsub">The Ultimate Anime Universe · Free Forever</div>
+  <div class="fnav">
+    <a onclick="history.back()">Home</a>
+    <a href="./index.html">Rankings</a>
+    <a href="./index.html">VS Fight</a>
+    <a href="./index.html">Wiki</a>
+    <a href="./index.html">Chat</a>
+  </div>
+  <div class="fcopy">Built by <a href="https://pixelskits.site" target="_blank">Ribon Patil</a> &nbsp;·&nbsp; &copy; 2025 AniOracle</div>
+  <div class="frib">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M8 8h5a2.5 2.5 0 0 1 0 5H8V8Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M13 13l3 4" stroke="currentColor" stroke-width="1.4"/></svg>
+    <span>A Ribons Website</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast">
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+  Downloading…
+</div>
+
+<script>
+var WALLS=[
+  {src:'./wall-01.png',cat:'battle',label:'Battle Scene'},
+  {src:'./wall-02.png',cat:'group',label:'Group Shot'},
+  {src:'./wall-03.png',cat:'group',label:'Group Shot'},
+  {src:'./wall-04.jpg',cat:'group',label:'Group Shot'},
+  {src:'./wall-05.jpg',cat:'battle',label:'Battle Scene'},
+  {src:'./wall-06.jpg',cat:'group',label:'Group Shot'},
+  {src:'./ad-01.png',cat:'character',label:'AniOracle'},
+  {src:'./ad-02.png',cat:'group',label:'Pirates'},
+  {src:'./ad-03.png',cat:'group',label:'Black Clover'},
+  {src:'./ad-04.jpg',cat:'group',label:'Naruto'},
+  {src:'./ad-05.png',cat:'battle',label:'Bleach'},
+  {src:'./ad-06.jpg',cat:'group',label:'Naruto'},
+  {src:'./ad-07.jpg',cat:'battle',label:'White Hair Squad'},
+  {src:'./ad-08.jpg',cat:'battle',label:'Naruto Battle'},
+  {src:'./ad-09.jpg',cat:'fight',label:'Demon Slayer'},
+  {src:'./ad-10.jpg',cat:'group',label:'All Anime'},
+  {src:'./ad-11.png',cat:'character',label:'AniOracle'},
+  {src:'./sbg-01.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-02.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-03.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-04.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-05.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-06.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-07.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-08.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-09.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-10.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-11.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-12.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-13.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-14.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-15.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-16.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-17.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-18.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-19.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-20.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-21.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-22.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-23.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-24.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-25.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-26.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-27.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-28.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-29.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-30.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-31.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-32.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./sbg-33.jpg',cat:'scene',label:'Anime Scene'},
+  {src:'./hero1.jpg',cat:'landscape',label:'Landscape'},
+  {src:'./hero2.jpg',cat:'landscape',label:'Landscape'},
+  {src:'./hero3.jpg',cat:'landscape',label:'Landscape'},
+  {src:'./hero4.jpg',cat:'landscape',label:'Landscape'},
+  {src:'./hero5.jpg',cat:'landscape',label:'Landscape'},
+  {src:'./hero6.jpg',cat:'landscape',label:'Landscape'},
+  {src:'./hero7.jpg',cat:'landscape',label:'Landscape'},
+  {src:'./bg-01.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-02.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-03.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-04.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-05.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-07.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-08.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-09.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-10.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-11.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-12.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-15.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-16.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-17.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-18.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-19.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-20.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-21.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-22.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-23.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-24.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-25.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-26.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-27.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-28.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-29.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-30.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-31.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-33.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-34.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-35.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-36.jpg',cat:'landscape',label:'Background'},
+  {src:'./bg-37.jpg',cat:'landscape',label:'Background'},
+  {src:'./fight-luffy-gear5-vs-lucci.jpg',cat:'fight',label:'Luffy vs Lucci'},
+  {src:'./fight-naruto-vs-sasuke.jpg',cat:'fight',label:'Naruto vs Sasuke'},
+  {src:'./fight-whitebeard-vs-admiral.jpg',cat:'fight',label:'Whitebeard vs Akainu'},
+  {src:'./fight-ichigo-vs-demon.jpg',cat:'fight',label:'Ichigo vs Ulquiorra'},
+  {src:'./fight-goku-vs-frieza.jpg',cat:'fight',label:'Goku vs Frieza'},
+  {src:'./popular-gojo.png',cat:'character',label:'Gojo Satoru'},
+  {src:'./popular-gojo-1.png',cat:'character',label:'Gojo Satoru'},
+  {src:'./popular-goku.png',cat:'character',label:'Goku'},
+  {src:'./most-popular-bg.jpg',cat:'landscape',label:'Most Popular'},
+  {src:'./most-hated-bg.jpg',cat:'landscape',label:'Most Hated'},
+  {src:'./most-beautiful-bg.png',cat:'landscape',label:'Most Beautiful'},
+  {src:'./explore-bg.jpg',cat:'landscape',label:'Explore'},
+  {src:'./bg-characters.jpg',cat:'landscape',label:'Characters'},
+  {src:'./bg-rankings.jpg',cat:'landscape',label:'Rankings'},
+  {src:'./fights-banner.png',cat:'fight',label:'Best Fights'}
+];
+
+// Hero slideshow
+(function(){
+  var imgs=['./wall-01.png','./ad-05.png','./sbg-11.jpg','./ad-03.png','./sbg-22.jpg'];
+  var sl=document.getElementById('hslides');
+  var dt=document.getElementById('hdots');
+  imgs.forEach(function(s,i){
+    var d=document.createElement('div');d.className='hslide'+(i===0?' on':'');
+    d.innerHTML='<img src="'+s+'" alt="" loading="'+(i===0?'eager':'lazy')+'">';
+    sl.appendChild(d);
+    var dot=document.createElement('div');dot.className='hdot'+(i===0?' on':'');
+    dt.appendChild(dot);
+  });
+  var c=0;
+  var slides=sl.querySelectorAll('.hslide');
+  var dots=dt.querySelectorAll('.hdot');
+  setInterval(function(){
+    slides[c].classList.remove('on');dots[c].classList.remove('on');
+    c=(c+1)%slides.length;
+    slides[c].classList.add('on');dots[c].classList.add('on');
+  },4000);
+})();
+
+var PAGE=12,curF='all',curS='',curPage=0,curList=[],sortNew=true;
+
+function getFiltered(){
+  var l=WALLS.slice();
+  if(curF!=='all')l=l.filter(function(w){return w.cat===curF;});
+  if(curS){var q=curS.toLowerCase();l=l.filter(function(w){return w.label.toLowerCase().includes(q)||w.cat.toLowerCase().includes(q);});}
+  if(!sortNew)l=l.slice().reverse();
+  return l;
+}
+
+window.setFilter=function(f,btn){
+  curF=f;curS='';document.getElementById('srchInp').value='';
+  document.querySelectorAll('.cat').forEach(function(b){b.classList.remove('on');});btn.classList.add('on');
+  reset();
+};
+window.doSearch=function(v){curS=v;reset();};
+window.toggleSort=function(){
+  sortNew=!sortNew;
+  document.getElementById('sortLbl').textContent=sortNew?'Newest':'Oldest';
+  reset();
+};
+
+function reset(){
+  curPage=0;curList=getFiltered();
+  document.getElementById('wgrid').innerHTML='';
+  appendPage();
+  document.getElementById('scnt').textContent=curList.length+' wallpapers';
+}
+
+function appendPage(){
+  var grid=document.getElementById('wgrid');
+  var slice=curList.slice(curPage*PAGE,(curPage+1)*PAGE);
+  if(!slice.length&&curPage===0){grid.innerHTML='<div class="empty">No wallpapers found</div>';return;}
+  slice.forEach(function(w){
+    var c=document.createElement('div');c.className='wcard';
+    c.innerHTML='<img src="'+w.src+'" loading="lazy" onerror="this.parentNode.style.display=\'none\'">'
+      +'<div class="wcard-tag">'+w.label+'</div>'
+      +'<div class="wcard-ov"><button class="wcard-btn">'
+      +'<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
+      +' Download</button></div>';
+    c.onclick=function(){dlWall(w.src);};
+    grid.appendChild(c);
+  });
+  curPage++;
+  var shown=curPage*PAGE;
+  var lmw=document.getElementById('lmw');
+  if(shown<curList.length){
+    lmw.style.display='block';
+    document.getElementById('lmcnt').textContent='('+(curList.length-shown)+' more)';
+  }else{lmw.style.display='none';}
+}
+
+window.loadMore=function(){appendPage();};
+
+function dlWall(src){
+  var a=document.createElement('a');a.href=src;a.download=src.split('/').pop();
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  var t=document.getElementById('toast');t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');},2200);
+}
+
+reset();
+</script>
+</body>
+</html>
