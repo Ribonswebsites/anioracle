@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://anioracle.com/</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://anioracle.com/anioracle-logo-1.png</image:loc>
+      <image:title>AniOracle — The Ultimate Anime Universe</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://anioracle.com/ao-power-2.jpg</image:loc>
+      <image:title>AniOracle Trending Anime</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://anioracle.com/ao-legends-2.jpg</image:loc>
+      <image:title>AniOracle Greatest Anime of All Time</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://anioracle.com/wiki.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
