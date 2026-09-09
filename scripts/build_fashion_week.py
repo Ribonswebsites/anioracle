@@ -27,7 +27,7 @@ characters = [
 ('Yuno','Black Clover','Char yuno.png','Cloak proportion','Color harmony','Accessory styling','World coherence',87,'Classic hero'),
 ]
 
-hero_assets = ['hero-whitehair-ops.jpg','hero-onepiece-wano.jpg','hero-naruto-leaf.jpg','hero-aot.jpg','hero-bleach.jpg','hero-mha.jpg','hero-deathnote.jpg','hero-opm.jpg','hero-pokemon.jpg','hero-naruto-hokage.jpg','hero-onepiece-crew.jpg','hero-anioracle.jpg']
+hero_assets = ['1788934050686.png','1788934054076.png','1788934057568.png','1788934064190.png','1788934067743.png','1788934072069.png','1788934078434.png','1788934093203.png','1788934096542.png','1788934099794.png','1788934104998.png','1788934107801.png','hero-whitehair-ops.jpg','hero-onepiece-wano.jpg','hero-naruto-leaf.jpg','hero-aot.jpg','hero-bleach.jpg','hero-mha.jpg','hero-deathnote.jpg','hero-opm.jpg','hero-pokemon.jpg','hero-naruto-hokage.jpg','hero-onepiece-crew.jpg','hero-anioracle.jpg']
 hero_assets = [a for a in hero_assets if (root/a).exists()]
 
 cards=[]
