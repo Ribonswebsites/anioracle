@@ -775,6 +775,21 @@ img { display: block; }
 .eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--pu3); animation: rpd 2s ease-in-out infinite; }
 /* Big section title */
 .sec-title { font-size: clamp(2.2rem, 8.5vw, 3.8rem); font-weight: 900; line-height: .95; letter-spacing: -.035em; text-align: center; margin-bottom: 12px; }
+/* Lightweight motion layer: no library, no extra requests, reduced-motion safe. */
+.sec-title, .hero-title {
+  background: linear-gradient(110deg, var(--snow) 20%, var(--pu3) 45%, var(--pk2) 60%, var(--snow) 80%);
+  background-size: 240% auto;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: ao-text-shimmer 9s linear infinite;
+}
+.ao-marquee-viewport { overflow-x: auto; scrollbar-width: none; }
+.ao-marquee-viewport::-webkit-scrollbar { display: none; }
+.ao-marquee-track { display: inline-flex; width: max-content; animation: ao-marquee-right 42s linear infinite; will-change: transform; }
+.ao-marquee-viewport:hover .ao-marquee-track, .ao-marquee-viewport:focus-within .ao-marquee-track { animation-play-state: paused; }
+@keyframes ao-text-shimmer { to { background-position: -240% center; } }
+@keyframes ao-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) { .sec-title, .hero-title, .ao-marquee-track { animation: none !important; } }
+
 .st-plain { display: block; color: var(--snow); }
 .st-grad { display: block; background: linear-gradient(135deg, var(--pu2) 0%, var(--pk2) 55%, #fb923c 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .st-stroke { display: block; color: transparent; -webkit-text-stroke: 2px rgba(196,181,253,.3); font-size: clamp(2.4rem,9vw,4.2rem); letter-spacing: .07em; text-transform: uppercase; margin-top: 3px; }
@@ -6007,22 +6022,6 @@ function pillNav_orig(btn, target) {
 
   <!-- Legal Links -->
   <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;padding:12px 0 8px">
-    <a href="terms.html" style="display:inline-flex;align-items:center;gap:5px;color:rgba(196,181,253,.5);font-size:.58rem;font-weight:600;font-family:var(--ff)">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
-      Terms &amp; Conditions
-    </a>
-    <a href="privacy.html" style="display:inline-flex;align-items:center;gap:5px;color:rgba(196,181,253,.5);font-size:.58rem;font-weight:600;font-family:var(--ff)">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Privacy Policy
-    </a>
-    <a href="disclaimer.html" style="display:inline-flex;align-items:center;gap:5px;color:rgba(196,181,253,.5);font-size:.58rem;font-weight:600;font-family:var(--ff)">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      Disclaimer
-    </a>
-    <a href="contact.html" style="display:inline-flex;align-items:center;gap:5px;color:rgba(196,181,253,.5);font-size:.58rem;font-weight:600;font-family:var(--ff)">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Contact
-    </a>
   </div>
 
   <!-- Disclaimer box -->
@@ -15025,8 +15024,7 @@ async function loadHomeManga() {
 function renderCharList(elId, items, rankColor) {
   const el = g(elId); if (!el) return;
   const medals = ['#FFD700','#C0C0C0','#CD7F32'];
-  el.innerHTML = `<div style="display:flex;gap:10px;overflow-x:auto;padding:0 16px 16px;scrollbar-width:none;-ms-overflow-style:none">` +
-    items.slice(0, 20).map((c, i) => {
+  const cards = items.slice(0, 20).map((c, i) => {
       const img = c.images?.jpg?.large_image_url || c.images?.jpg?.image_url || c.images?.webp?.image_url || '';
       const anime = c.anime?.[0]?.anime?.title || c.manga?.[0]?.manga?.title || '';
       const fav = c.favorites || 0;
@@ -15045,7 +15043,8 @@ function renderCharList(elId, items, rankColor) {
         </div>
         <div style="font-size:.54rem;color:var(--snow3);margin-top:6px;padding:0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${x(anime.slice(0,22))}</div>
       </div>`;
-    }).join('') + `</div>`;
+    }).join('');
+  el.innerHTML = `<div class="ao-marquee-viewport" tabindex="0" aria-label="Scrolling anime character rankings"><div class="ao-marquee-track" style="gap:10px;padding:0 16px 16px">${cards}${cards}</div></div>`;
 }
 
 async function loadMostPopular() {
