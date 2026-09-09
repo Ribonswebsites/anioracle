@@ -1,0 +1,12 @@
+# AniOracle
+
+> AniOracle is a fan-made anime discovery and entertainment site covering characters, power levels, versus battles, manga, seasonal anime, and AI-assisted exploration.
+
+## Primary sections
+
+- [Home](https://anioracle.online/) — featured anime, trending characters, and discovery tools.
+- [Anime Wiki](https://anioracle.online/wiki.html) — anime and character reference content.
+
+## Editorial and rights note
+
+AniOracle is non-commercial and fan-made. Anime titles, character names, images, and related content belong to their respective creators and rights holders.

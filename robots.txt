@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anioracle.com/sitemap.xml
+# Allow major search and answer-engine crawlers to discover public AniOracle pages.
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://anioracle.online/sitemap.xml
