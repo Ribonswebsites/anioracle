@@ -175,16 +175,6 @@ img { display: block; }
   background: #fff;
   animation: splash-poster-in 1.2s var(--ease-out-expo) both;
 }
-.splash-3d-logo {
-  position: relative; z-index: 4;
-  width: min(52vw, 270px); height: min(52vw, 270px);
-  object-fit: contain;
-  filter: drop-shadow(0 24px 24px rgba(40, 20, 75, .22));
-  animation: splash-logo-float 3.2s ease-in-out .8s infinite, splash-logo-in .9s var(--ease-out-expo) .15s both;
-  transform-origin: center;
-}
-@keyframes splash-poster-in { from { opacity: 0; transform: scale(1.035); } to { opacity: 1; transform: scale(1); } }
-@keyframes splash-logo-float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-8px) rotate(1deg); } }
 @media (prefers-reduced-motion: reduce) {
   .splash-poster, .splash-3d-logo, .splash-logo { animation: none !important; }
 }
@@ -780,12 +770,13 @@ img { display: block; }
   background: linear-gradient(110deg, var(--snow) 20%, var(--pu3) 45%, var(--pk2) 60%, var(--snow) 80%);
   background-size: 240% auto;
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  animation: ao-text-shimmer 9s linear infinite;
+  animation: ao-text-drift 4.5s ease-in-out infinite alternate, ao-text-shimmer 9s linear infinite;
 }
 .ao-marquee-viewport { overflow-x: auto; scrollbar-width: none; }
 .ao-marquee-viewport::-webkit-scrollbar { display: none; }
-.ao-marquee-track { display: inline-flex; width: max-content; animation: ao-marquee-right 42s linear infinite; will-change: transform; }
+.ao-marquee-track { display: inline-flex; width: max-content; animation: ao-marquee-right 18s linear infinite; will-change: transform; }
 .ao-marquee-viewport:hover .ao-marquee-track, .ao-marquee-viewport:focus-within .ao-marquee-track { animation-play-state: paused; }
+@keyframes ao-text-drift { from { transform: translateX(-10px); } to { transform: translateX(10px); } }
 @keyframes ao-text-shimmer { to { background-position: -240% center; } }
 @keyframes ao-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @media (prefers-reduced-motion: reduce) { .sec-title, .hero-title, .ao-marquee-track { animation: none !important; } }
@@ -2765,7 +2756,6 @@ img { max-width: 100%; }
 <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">AniOracle — Anime Characters, Power Levels, VS Battles and AI Chat</h1>
 <div id="splash" aria-label="AniOracle intro">
   <img class="splash-poster" src="./assets/anioracle-splash.png" alt="AniOracle logo artwork">
-  <img class="splash-3d-logo" src="./assets/anioracle-logo-3d-web.webp" alt="AniOracle 3D logo">
   <!-- Top-left Ribons brand -->
   <div class="splash-ribons" style="animation:splash-sub-in .5s var(--ease-out-expo) .2s both;">
     <div class="ribons-mark">
