@@ -2695,7 +2695,7 @@ img { max-width: 100%; }
 #pg-chat { overflow: hidden; }
 
 
-/* Scroll-aware motion system: every section enters from the left, then gently wiggles. */
+/* Scroll-aware motion system: every section enters from the left, wiggles once, then stays still. */
 .ao-scroll-reveal {
   opacity: 0;
   transform: translate3d(-72px, 0, 0);
@@ -2705,7 +2705,7 @@ img { max-width: 100%; }
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: opacity .72s var(--ease-out-expo), transform .72s var(--ease-out-expo);
-  animation: ao-heading-wiggle 4.8s ease-in-out 1s infinite alternate;
+  animation: ao-heading-wiggle 1.25s ease-in-out .72s 1 both;
 }
 @keyframes ao-heading-wiggle {
   0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
@@ -6004,6 +6004,19 @@ function pillNav_orig(btn, target) {
 </div>
 
 
+<!-- ═══ ANIME GAMES FEATURE ═══ -->
+<section class="ao-games-feature ao-scroll-reveal" aria-labelledby="anime-games-title">
+  <div class="ao-games-copy">
+    <div class="eyebrow-wrap"><div class="eyebrow"><span class="eyebrow-dot"></span>PC + Mobile ratings</div></div>
+    <h2 id="anime-games-title" class="sec-title"><span class="st-plain">Anime</span><span class="st-grad">Games</span><span class="st-stroke">PLAY NEXT</span></h2>
+    <p class="sec-desc">Compare anime games on computer and mobile with ratings for combat, story, visuals, performance, progression, and free-to-play value.</p>
+    <a class="ao-fashion-cta" href="./anime-games.html">Explore Anime Games <span>→</span></a>
+  </div>
+</section>
+<style>
+.ao-games-feature{position:relative;overflow:hidden;max-width:980px;margin:18px auto 28px;border:1px solid rgba(103,232,249,.24);border-radius:24px;background:linear-gradient(120deg,rgba(7,24,49,.98),rgba(37,14,65,.82)),url('./bg-watch.jpg') center/cover;min-height:220px;display:flex;align-items:center}.ao-games-feature:after{content:'PC  ·  MOBILE  ·  UPCOMING';position:absolute;right:24px;bottom:18px;color:rgba(103,232,249,.45);font-size:.62rem;letter-spacing:.18em;font-weight:900}.ao-games-copy{position:relative;z-index:1;max-width:590px;padding:28px 24px;text-align:left}.ao-games-copy .sec-title{margin:0 0 12px}.ao-games-copy .sec-desc{margin:0 0 18px}@media(max-width:560px){.ao-games-feature{margin-left:14px;margin-right:14px;min-height:290px}.ao-games-copy{padding:24px 18px}.ao-games-feature:after{right:18px;font-size:.5rem}}
+</style>
+
 <!-- ═══ ANIME FASHION WEEK FEATURE ═══ -->
 <section class="ao-fashion-feature ao-scroll-reveal" aria-labelledby="anime-fashion-week-title">
   <div class="ao-fashion-art" aria-hidden="true"></div>
@@ -6030,10 +6043,11 @@ function pillNav_orig(btn, target) {
     <a href="./one-piece-oda-sbs-facts.html" class="ao-seo-card"><strong>One Piece Oda SBS Facts</strong><span>Browse author Q&amp;A topics including character details, heights, birthdays, bounties, and design facts.</span></a>
     <a href="./most-beautiful-v2-2.html" class="ao-seo-card"><strong>Most Beautiful Anime Characters</strong><span>Fan rankings and visual profiles across popular anime universes.</span></a>
     <a href="./anime-fashion-week.html" class="ao-seo-card"><strong>Anime Fashion Week</strong><span>Top 20 anime character outfits, four fashion skills, category ratings, and runway awards.</span></a>
+    <a href="./anime-games.html" class="ao-seo-card"><strong>Anime Games: PC &amp; Mobile</strong><span>Ratings for anime games on computer and mobile, upcoming releases, gameplay, story, visuals, and value.</span></a>
     <a href="./wallpaper.html" class="ao-seo-card"><strong>Free Anime Wallpapers</strong><span>Browse anime artwork and wallpapers for your phone and desktop.</span></a>
   </div>
   <div class="ao-search-questions" aria-label="Popular anime searches">
-    <span>oracle anime</span><span>anime character database</span><span>anime power levels</span><span>strongest anime characters</span><span>One Piece Oda SBS facts</span><span>free anime wiki</span><span>anime height chart</span><span>anime bounty rankings</span>
+    <span>oracle anime</span><span>anime character database</span><span>anime power levels</span><span>strongest anime characters</span><span>One Piece Oda SBS facts</span><span>free anime wiki</span><span>anime height chart</span><span>anime bounty rankings</span><span>anime games PC</span><span>anime games mobile</span>
   </div>
 </section>
 <style>
@@ -7158,14 +7172,19 @@ function initSplash() {
     if (reduce) { targets.forEach(function(el){ el.classList.add('ao-visible'); }); return; }
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
-        entry.target.classList.toggle('ao-visible', entry.isIntersecting);
+        if (entry.isIntersecting && !entry.target.dataset.motionSeen) {
+          entry.target.dataset.motionSeen = '1';
+          entry.target.classList.add('ao-visible');
+          io.unobserve(entry.target);
+        }
       });
     }, {root: root, threshold: .12, rootMargin: '0px 0px -8% 0px'});
-    targets.forEach(function(el){ io.observe(el); });
+    targets.forEach(function(el){ if (!el.dataset.motionSeen) io.observe(el); });
   }
   function registerStrips(root){
     if (!root || reduce) return;
     root.querySelectorAll('[style*="overflow-x:auto"], [style*="overflow-x: auto"], .ao-loop-strip').forEach(function(strip){
+      if (strip.matches('.rank-filters,.atabs,.pill-tabs,.genre-bar,.chat-sugs,.ao-search-questions,[aria-label*="filter" i],[role="tablist"]')) return;
       if (loopStates.has(strip)) return;
       strip.classList.add('ao-loop-strip');
       var state = {paused:false, last:performance.now(), manualUntil:0};
@@ -7177,8 +7196,8 @@ function initSplash() {
       (function tick(now){
         var dt=Math.min(34,now-state.last); state.last=now;
         if (!state.paused && now>state.manualUntil && strip.scrollWidth>strip.clientWidth+8) {
-          strip.scrollLeft += dt*0.028;
-          if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2) strip.scrollLeft=0;
+          strip.scrollLeft -= dt*0.028;
+          if (strip.scrollLeft <= 0) strip.scrollLeft = strip.scrollWidth - strip.clientWidth;
         }
         requestAnimationFrame(tick);
       })(performance.now());
