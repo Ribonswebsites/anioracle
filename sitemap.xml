@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://anioracle.online/</loc><lastmod>2026-09-09</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-  <url><loc>https://anioracle.online/wiki.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://anioracle.online/fights-updated.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://anioracle.online/most-beautiful-v2-2.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://anioracle.online/most-popular-v3-3.html</loc><lastmod>2026-09-09</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://anioracle.online/most-hated-final.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://anioracle.online/wallpaper.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://anioracle.online/</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://anioracle.online/contact.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://anioracle.online/disclaimer.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://anioracle.online/fights-updated.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://anioracle.online/most-beautiful-v2-2.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://anioracle.online/most-hated-final.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://anioracle.online/most-popular-v3-3.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://anioracle.online/privacy.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://anioracle.online/terms.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://anioracle.online/wallpaper.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://anioracle.online/wiki.html</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 </urlset>
